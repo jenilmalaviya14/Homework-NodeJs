@@ -1,0 +1,23 @@
+// const User = require("../models/user.model");
+const { userService } = require("../services");
+
+/** create user */
+const createUser = async (req, res) => {
+  try {
+    const reqBody = req.body;
+
+    const user = await userService.createUser(reqBody);
+    if(!user){
+      throw new Error("something wen twrong, please try again or later!");
+    }
+
+    res.status(200).json({
+      success: true,
+      message: ("crete User Successfully "),
+      data: { user },
+    });
+  } catch (error) {
+    res.status(400).json({ success: false, message: error.message });
+  }
+};
+module.exports = {createUser}

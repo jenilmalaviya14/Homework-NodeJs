@@ -1,0 +1,10 @@
+module.exports.Category = require('./category');
+module.exports.Hotel = require('./hotel');
+module.exports.Bus = require('./bus');
+module.exports.Stationery = require('./stationery');
+module.exports.School = require('./school');
+module.exports.Travel = require('./travel');
+module.exports.pharmacy = require('./pharmacy');
+module.exports.jewellery = require('./jewellery');
+module.exports.movie = require('./movie');
+module.exports.grocery = require('./grocery');
