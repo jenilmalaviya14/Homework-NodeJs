@@ -1,0 +1,1 @@
+module.exports.productValidation = require("./mobile.validation");

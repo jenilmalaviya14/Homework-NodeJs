@@ -21,7 +21,6 @@ const createCategory = async (req, res) => {
 };
 const getCategory = async (req, res) => {
   try {
-    //  const category = await Category.find()
     const category = await categoryService.getCategoryList();
     if (!category) {
       throw new Error("something went wrong, please try again or later!");
