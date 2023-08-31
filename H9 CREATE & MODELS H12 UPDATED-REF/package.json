@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "e1cho \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "nodemon ./src/index.js"
   },
   "author": "jenil",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "express": "^4.18.2",
     "joi": "^17.9.2",
     "mongoose": "^7.4.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "yarn": "^1.22.19"
   }
 }

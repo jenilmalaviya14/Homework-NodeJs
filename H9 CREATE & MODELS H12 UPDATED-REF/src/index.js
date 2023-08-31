@@ -1,13 +1,12 @@
 // const mongoose = require("mongoose");
-const express = require("express");
 const bodyParser = require("body-parser");
-const date = require("date-and-time");
 const { connectDB } = require("./db/dbconnection")
 const config = require("./config/config");
 const routes = require("./routes/v1");
-const app = express();
-const http = require("http");
 
+const http = require("http");
+const express = require("express");
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

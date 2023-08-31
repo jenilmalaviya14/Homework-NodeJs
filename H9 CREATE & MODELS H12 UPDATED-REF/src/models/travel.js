@@ -19,5 +19,5 @@ const travelSchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Travel = mongoose.model("Travel", travelSchema);
+const Travel = mongoose.model("travel", travelSchema);
 module.exports = Travel;

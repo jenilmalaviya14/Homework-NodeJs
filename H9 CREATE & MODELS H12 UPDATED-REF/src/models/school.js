@@ -1,21 +1,24 @@
-const { string } = require("joi");
 const mongoose = require("mongoose");
 
-const MusicSchema = new mongoose.Schema({
-    music_title: {
+const schoolSchema = new mongoose.Schema({
+    school_name: {
         type: String,
         trim: true
     },
-    artist: {
+    school_address: {
         type: String,
         trim: true
     },
-    album: {
+    school_principle: {
         type: String,
         trim: true
     },
-    genre: {
+    school_time: {
         type: String,
+        trim: true
+    },
+    is_active: {
+        type: Boolean,
         default: true
     }
 },
@@ -24,5 +27,5 @@ const MusicSchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Music = mongoose.model("Music", MusicSchema);
-module.exports = Music;
+const School = mongoose.model("school", schoolSchema);
+module.exports = School;

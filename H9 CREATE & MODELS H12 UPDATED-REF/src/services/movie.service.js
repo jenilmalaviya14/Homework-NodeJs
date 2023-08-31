@@ -15,7 +15,7 @@ const getMovie = async () => {
 
 const deleteMovie = async (Id) => {
     return Movie.findByIdAndDelete(Id)
-}
+};
 
 const getMovieById = async (movieId) => {
     return Movie.findById(movieId);

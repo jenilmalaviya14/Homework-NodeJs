@@ -1,25 +1,29 @@
 const mongoose = require("mongoose");
 
-const schoolSchema = new mongoose.Schema({
-    school_name: {
+const jewellerySchema = new mongoose.Schema({
+    jewellery_name: {
         type: String,
         trim: true
     },
-    school_address: {
+    jewellery_price: {
         type: String,
         trim: true
     },
-    school_principle: {
+    jewellery_design: {
         type: String,
         trim: true
     },
-    school_time: {
+    Jewellery_materials: {
         type: String,
         trim: true
     },
     is_active: {
         type: Boolean,
         default: true
+    },
+    category :{
+        type : mongoose.Types.ObjectId,
+        ref : "category"
     }
 },
     {
@@ -27,5 +31,5 @@ const schoolSchema = new mongoose.Schema({
         versionKey: false
     });
 
-const School = mongoose.model("School", schoolSchema);
-module.exports = School;
+const Jewellery = mongoose.model("Jewellery", jewellerySchema);
+module.exports = Jewellery;

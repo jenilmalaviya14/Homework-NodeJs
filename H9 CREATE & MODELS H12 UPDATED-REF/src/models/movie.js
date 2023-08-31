@@ -1,19 +1,23 @@
 const mongoose = require("mongoose");
 
-const jewellerySchema = new mongoose.Schema({
-    jewellery_name: {
+const movieSchema = new mongoose.Schema({
+    Movie_name: {
         type: String,
         trim: true
     },
-    jewellery_price: {
+    release_year: {
         type: String,
         trim: true
     },
-    jewellery_design: {
+    genre: {
         type: String,
         trim: true
     },
-    Jewellery_materials: {
+    actors: {
+        type: String,
+        trim: true
+    },
+    directors: {
         type: String,
         trim: true
     },
@@ -27,5 +31,5 @@ const jewellerySchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Jewellery = mongoose.model("Jewellery", jewellerySchema);
-module.exports = Jewellery;
+const Movie = mongoose.model("movie", movieSchema);
+module.exports = Movie;

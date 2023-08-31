@@ -1,25 +1,26 @@
+const { string } = require("joi");
 const mongoose = require("mongoose");
 
-const GrocerySchema = new mongoose.Schema({
-    grocery_name: {
+const MusicSchema = new mongoose.Schema({
+    music_title: {
         type: String,
         trim: true
     },
-    veg_or_nonveg: {
+    artist: {
         type: String,
         trim: true
     },
-    Qty: {
+    album: {
         type: String,
         trim: true
     },
-    psc: {
-        type: String,
-        trim: true
-    },
-    weight: {
+    genre: {
         type: String,
         default: true
+    },
+    movie : {
+        type : mongoose.Types.ObjectId,
+        ref:'movie'
     }
 },
     {
@@ -27,5 +28,5 @@ const GrocerySchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Grocery = mongoose.model("Grocery", GrocerySchema);
-module.exports = Grocery;
+const Music = mongoose.model("Music", MusicSchema);
+module.exports = Music;

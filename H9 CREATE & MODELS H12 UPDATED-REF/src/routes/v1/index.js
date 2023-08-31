@@ -10,6 +10,7 @@ const jewellery = require("./jewellery.route");
 const movie = require("./movie.route");
 const music = require("./music.route");
 const grocery = require("./grocery.route");
+const student = require("./student.route");
 
 const router = express.Router();
 
@@ -24,5 +25,6 @@ router.use("/jewellery", jewellery);
 router.use("/movie", movie);
 router.use("/music", music);
 router.use("/grocery", grocery);
+router.use("/student", student)
 
 module.exports = router;

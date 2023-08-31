@@ -1,35 +1,36 @@
 const mongoose = require("mongoose");
+const config = require("../config/config");
 
-const movieSchema = new mongoose.Schema({
-    Movie_name: {
+const GrocerySchema = new mongoose.Schema({
+    grocery_name: {
         type: String,
         trim: true
     },
-    release_year: {
+    veg_or_nonveg: {
         type: String,
         trim: true
     },
-    genre: {
+    Qty: {
         type: String,
         trim: true
     },
-    actors: {
+    psc: {
         type: String,
         trim: true
     },
-    directors: {
+    weight: {
         type: String,
-        trim: true
-    },
-    is_active: {
-        type: Boolean,
         default: true
-    }
+    },
+    category: {
+        type: mongoose.Types.ObjectId,
+        ref: "category"
+      }
 },
     {
         timestamps: true,
         versionKey: false
     });
 
-const Movie = mongoose.model("Movie", movieSchema);
-module.exports = Movie;
+const Grocery = mongoose.model("grocery", GrocerySchema);
+module.exports = Grocery;

@@ -1,35 +1,34 @@
 const mongoose = require("mongoose");
 
-const stationerySchema = new mongoose.Schema({
-    stationery_name: {
+const busSchema = new mongoose.Schema({
+    bus_name: {
         type: String,
         trim: true,
     },
-    books: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    calender: {
+    bus_number: {
         type: String,
         trim: true,
         required: true
     },
-    pens: {
+    bus_company: {
         type: String,
         trim: true,
         required: true
     },
-    HB_Pencils: {
+    bus_year: {
         type: String,
         trim: true,
         required: true
     },
-    stationery_desc: {
+    bus_capacity: {
         type: String,
         trim: true,
         required: true
     },
+    travel : {
+        type : mongoose.Types.ObjectId,
+        ref:'travel'
+    }
 },
     {
         timestamps: true,
@@ -37,5 +36,5 @@ const stationerySchema = new mongoose.Schema({
     }
 );
 
-const Stationary = mongoose.model("Stationery", stationerySchema);
-module.exports = Stationary;
+const Bus = mongoose.model("Bus", busSchema);
+module.exports = Bus;

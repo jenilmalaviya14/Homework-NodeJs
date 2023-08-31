@@ -8,3 +8,4 @@ module.exports.pharmacy = require('./pharmacy');
 module.exports.jewellery = require('./jewellery');
 module.exports.movie = require('./movie');
 module.exports.grocery = require('./grocery');
+module.exports.student = require('./students');

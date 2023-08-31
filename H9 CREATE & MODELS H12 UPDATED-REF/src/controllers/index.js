@@ -1,4 +1,4 @@
-module.exports.categoryController = require("./category.controllers");
+module.exports.categoryController = require("./category.controller");
 module.exports.hotelController = require("./hotel.controller");
 module.exports.busController = require("./bus.controller");
 module.exports.stationeryController = require("./stationery.controller");
@@ -9,3 +9,4 @@ module.exports.jwelleryController = require("./jewellery.controller");
 module.exports.movieController = require("./movie.controller");
 module.exports.musicController = require("./music.controller");
 module.exports.groceryController = require("./grocery.controller");
+module.exports.studentController = require("./student.controller");
