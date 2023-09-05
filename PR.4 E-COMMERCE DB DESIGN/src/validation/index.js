@@ -1,0 +1,9 @@
+module.exports.mobileValidation = require("./mobile.validation");
+module.exports.cartValidation = require("./cart.validation");
+module.exports.categoryValidation = require("./category.validation");
+module.exports.orderValidation = require("./order.validation");
+module.exports.paymentValidation = require("./payment.validation");
+module.exports.productValidation = require("./product.validation");
+module.exports.useraddressValidation = require("./user_address.validation");
+module.exports.userValidation = require("./user.validation");
+module.exports.discountValidation = require("./discount.validation");

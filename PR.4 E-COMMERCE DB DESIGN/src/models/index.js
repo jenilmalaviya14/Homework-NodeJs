@@ -1,0 +1,9 @@
+module.exports.mobile = require('./mobile');
+module.exports.cart = require('./cart');
+module.exports.Category = require('./category');
+module.exports.order = require('./order');
+module.exports.payment = require('./payment');
+module.exports.product = require('./product');
+module.exports.user_address = require('./user_address');
+module.exports.user = require('./user');
+module.exports.discount = require('./discount');
