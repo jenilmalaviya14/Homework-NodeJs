@@ -1,28 +1,20 @@
 const mongoose = require("mongoose");
 
-const UseraddSchema = new mongoose.Schema({
-    address: {
+const OrderSchema = new mongoose.Schema({
+    total_order: {
         type: String,
         trim: true
     },
-    city: {
+    order_quntity: {
         type: String,
         trim: true
     },
-    state: {
+    order_location: {
         type: String,
         trim: true
     },
-    country: {
+    courier: {
         type: String,
-        trim: true
-    },
-    pincode: {
-        type: Number,
-        trim: true
-    },
-    telephone: {
-        type: Number,
         trim: true
     },
     is_active: {
@@ -31,13 +23,21 @@ const UseraddSchema = new mongoose.Schema({
     },
     user : {
         type : mongoose.Types.ObjectId,
-        ref:'user'
-    }
+        ref:"user"
+    },
+    hp : {
+        type : mongoose.Types.ObjectId,
+        ref:"hp"
+    },
+    legion : {
+        type : mongoose.Types.ObjectId,
+        ref:"legion"
+    },
 },
     {
         timestamps: true,
         versionKey: false
     });
 
-const Useradd = mongoose.model("useraddress", UseraddSchema);
-module.exports = Useradd;   
+const Order = mongoose.model("order", OrderSchema);
+module.exports = Order;

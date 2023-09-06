@@ -7,3 +7,4 @@ module.exports.productValidation = require("./product.validation");
 module.exports.useraddressValidation = require("./user_address.validation");
 module.exports.userValidation = require("./user.validation");
 module.exports.discountValidation = require("./discount.validation");
+module.exports.tokenValidation=require("./token.validation")

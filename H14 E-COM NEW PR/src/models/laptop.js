@@ -1,37 +1,29 @@
 const mongoose = require("mongoose");
 
-const UseraddSchema = new mongoose.Schema({
-    address: {
+const LaptopSchema = new mongoose.Schema({
+    Company: {
         type: String,
         trim: true
     },
-    city: {
+    type: {
         type: String,
         trim: true
     },
-    state: {
+    touch_and_notouch: {
         type: String,
         trim: true
     },
-    country: {
+    accessories : {
         type: String,
-        trim: true
-    },
-    pincode: {
-        type: Number,
-        trim: true
-    },
-    telephone: {
-        type: Number,
         trim: true
     },
     is_active: {
         type: Boolean,
         default: true
     },
-    user : {
+    electronic: {
         type : mongoose.Types.ObjectId,
-        ref:'user'
+        ref  :"electronic",
     }
 },
     {
@@ -39,5 +31,5 @@ const UseraddSchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Useradd = mongoose.model("useraddress", UseraddSchema);
-module.exports = Useradd;   
+const Laptop = mongoose.model("laptop", LaptopSchema);
+module.exports = Laptop;

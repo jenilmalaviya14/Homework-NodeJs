@@ -3,13 +3,11 @@ const router = express.Router();
 const { userValidation } = require("../../validation");
 const { userController } = require("../../controllers");
 const validate = require("../../middlewares/validate");
-const auth = require("../../middlewares/auth")
 
 // Create user
 
 router.post(
     "/create-user",
-    auth(),
     validate(userValidation.createUser),
     userController.createUser
 );

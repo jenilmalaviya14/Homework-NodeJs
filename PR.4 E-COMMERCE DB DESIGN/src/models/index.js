@@ -7,3 +7,4 @@ module.exports.product = require('./product');
 module.exports.user_address = require('./user_address');
 module.exports.user = require('./user');
 module.exports.discount = require('./discount');
+module.exports.Token=require("./token");

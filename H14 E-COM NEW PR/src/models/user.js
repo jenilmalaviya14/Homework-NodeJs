@@ -1,43 +1,36 @@
 const mongoose = require("mongoose");
 
-const UseraddSchema = new mongoose.Schema({
-    address: {
+const UserSchema = new mongoose.Schema({
+    username: {
         type: String,
         trim: true
     },
-    city: {
+    fisrt_name: {
         type: String,
         trim: true
     },
-    state: {
+    last_name: {
         type: String,
-        trim: true
-    },
-    country: {
-        type: String,
-        trim: true
-    },
-    pincode: {
-        type: Number,
         trim: true
     },
     telephone: {
         type: Number,
         trim: true
     },
+    email: {
+        type: String,
+        trim: true
+    },
     is_active: {
         type: Boolean,
         default: true
     },
-    user : {
-        type : mongoose.Types.ObjectId,
-        ref:'user'
-    }
 },
     {
         timestamps: true,
         versionKey: false
-    });
+    }
+)
 
-const Useradd = mongoose.model("useraddress", UseraddSchema);
-module.exports = Useradd;   
+const User = mongoose.model("user", UserSchema);
+module.exports = User;

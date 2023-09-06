@@ -1,43 +1,39 @@
 const mongoose = require("mongoose");
 
-const UseraddSchema = new mongoose.Schema({
-    address: {
+const CartSchema = new mongoose.Schema({
+    quantity: {
         type: String,
         trim: true
     },
-    city: {
+    SKU: {
+        type:  Number,
+        trim: true
+    },
+    password: {
         type: String,
         trim: true
     },
-    state: {
+    returns: {
         type: String,
-        trim: true
-    },
-    country: {
-        type: String,
-        trim: true
-    },
-    pincode: {
-        type: Number,
-        trim: true
-    },
-    telephone: {
-        type: Number,
         trim: true
     },
     is_active: {
         type: Boolean,
         default: true
     },
-    user : {
+    hp : {
         type : mongoose.Types.ObjectId,
-        ref:'user'
-    }
+        ref:"hp"
+    },
+    legion : {
+        type : mongoose.Types.ObjectId,
+        ref:"legion"
+    },
 },
     {
         timestamps: true,
         versionKey: false
     });
 
-const Useradd = mongoose.model("useraddress", UseraddSchema);
-module.exports = Useradd;   
+const Cart = mongoose.model("cart", CartSchema);
+module.exports = Cart;
