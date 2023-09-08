@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const LeginoSchema = new mongoose.Schema({
+const LegionSchema = new mongoose.Schema({
     model: {
         type: String,
         trim: true
     },
     price: {
-        type: Number,
+        type: String,
         trim: true
     },
     processor: {
@@ -34,6 +34,9 @@ const LeginoSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    image : {
+        type: String
+    },
     is_active: {
         type: Boolean,
         default: true
@@ -48,5 +51,5 @@ const LeginoSchema = new mongoose.Schema({
         versionKey: false
     });
 
-const Legino = mongoose.model("legino_laptop", LeginoSchema);
-module.exports = Legino;
+const Legion = mongoose.model("legion_laptop", LegionSchema);
+module.exports = Legion;

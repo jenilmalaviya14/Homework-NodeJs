@@ -1,29 +1,33 @@
 const Joi = require("joi");
 
-const createLegino = {
+const createLegion = {
     body: Joi.object().keys({
-        model: Joi.string().required().trim(),
-        price: Joi.string().required().trim(),
-        processor: Joi.string().required().trim(),
-        memory: Joi.string().required().trim(),
-        colour: Joi.string().required().trim(),
-        gaming: Joi.string().required().trim(),
-        storage: Joi.string().required().trim(),
-        description: Joi.string().required().trim()
+        model: Joi.string().required(),
+        price: Joi.string().required(),
+        processor: Joi.string().required(),
+        memory: Joi.string().required(),
+        colour: Joi.string().required(),
+        gaming: Joi.string().required(),
+        storage: Joi.string().required(),
+        description: Joi.string().required(),
+        image: Joi.string().allow(""),
+        laptop: Joi.string().allow(""),
     })
 };
 
-const listLegino = {
+const listLegion = {
     query: Joi.object().keys({
-        model: Joi.string().allow("").trim(),
-        price: Joi.string().allow("").trim(),
-        processor: Joi.string().allow("").trim(),
-        memory: Joi.string().allow("").trim(),
-        colour: Joi.string().allow("").trim(),
-        gaming: Joi.string().allow("").trim(),
-        storage: Joi.string().allow("").trim(),
-        description: Joi.string().allow("").trim()
+        model: Joi.string().allow(""),
+        price: Joi.string().allow(""),
+        processor: Joi.string().allow(""),
+        memory: Joi.string().allow(""),
+        colour: Joi.string().allow(""),
+        gaming: Joi.string().allow(""),
+        storage: Joi.string().allow(""),
+        description: Joi.string().allow(""),
+        image: Joi.string().allow(""),
+        laptop: Joi.string().allow(""),
     })
 }
 
-module.exports = { createLegino, listLegino }
+module.exports = { createLegion, listLegion }

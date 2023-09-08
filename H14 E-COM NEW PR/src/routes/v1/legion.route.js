@@ -1,34 +1,37 @@
 const express = require("express");
 const router = express.Router();
 const { legionValidation } = require("../../validation");
-const { leginoController } = require("../../controllers");
+const { legionController } = require("../../controllers");
+const { upload } = require("../../middlewares/upload");
 const validate = require("../../middlewares/validate");
 
-// Create legino
+// Create legion
 
 router.post(
-    "/create-legino",
-    validate(legionValidation.createLegino),
-    leginoController.createLegino
+    "/create-legion",
+    upload.single("image"),
+    validate(legionValidation.createLegion),
+    legionController.createLegion
 );
 
-// List legino
+// List legion
 router.get(
-    "/list-legino",
-    validate(legionValidation.listLegino),
-    leginoController.listLegino
+    "/list-legion",
+    upload.single("image"),
+    validate(legionValidation.listLegion),
+    legionController.listLegion
 );
 
-// Delete legino
+// Delete legion
 router.delete(
-    "/delete-legino/:Id",
-    leginoController.deleteLegino
+    "/delete-legion/:Id",
+    legionController.deleteLegion
 );
 
-// Update legino
+// Update legion
 router.put(
-    "/update-legino/:id",
-    leginoController.updatLegino
+    "/update-legion/:id",
+    legionController.updateLegion
 );
 
 module.exports = router;

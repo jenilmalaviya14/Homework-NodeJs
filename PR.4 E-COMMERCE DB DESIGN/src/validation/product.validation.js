@@ -5,7 +5,8 @@ const createProduct = {
         product_name: Joi.string().required().trim(),
         product_price: Joi.string().required().trim(),
         product_desc: Joi.string().required().trim(),
-        prosuct_SKU: Joi.string().required().trim()
+        prosuct_SKU: Joi.string().required().trim(),
+        category : Joi.string().required().trim(),
     })
 };
 
@@ -14,7 +15,8 @@ const listProduct = {
         product_name: Joi.string().allow("").trim(),
         product_price: Joi.string().allow("").trim(),
         product_desc: Joi.string().allow("").trim(),
-        prosuct_SKU: Joi.string().allow("").trim()
+        prosuct_SKU: Joi.string().allow("").trim(),
+        category : Joi.string().allow("").trim(),
     })
 }
 

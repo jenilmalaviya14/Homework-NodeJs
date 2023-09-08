@@ -5,7 +5,7 @@ const createProduct = async (reqBody) => {
 };
 
 const listProduct = async () => {
-    return Product.find({$or : [{is_active : "true"}]})
+    return Product.find({$or : [{is_active : "true"}]}).populate({path : "category",select: ["category_name"]})
 };
 
 const getId = async (id) => {
