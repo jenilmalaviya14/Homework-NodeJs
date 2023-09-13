@@ -10,7 +10,7 @@ const createLegion = {
         gaming: Joi.string().required(),
         storage: Joi.string().required(),
         description: Joi.string().required(),
-        image: Joi.string().allow(""),
+        image: Joi.string(),
         laptop: Joi.string().allow(""),
     })
 };

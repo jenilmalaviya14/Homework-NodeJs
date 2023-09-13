@@ -3,6 +3,13 @@ const { legionService } = require("../services")
 const createLegion = async (req, res) => {
     try {
         const reqBody = req.body
+
+        if (req.file) {
+            reqBody.image = req.file.filename;
+          } else {
+            throw new Error("Product image is required!");
+          }
+
         const legion = await legionService.createLegion(reqBody);
         if (!legion) {
             throw new Error("Something went wrong, please try again or later!");

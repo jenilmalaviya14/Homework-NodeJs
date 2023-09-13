@@ -1,7 +1,7 @@
-module.exports.cart = require('./cart');
-module.exports.electronic = require('./electronics');
-module.exports.hp = require('./hp');
-module.exports.laptop = require('./laptop');
-module.exports.legion = require('./legion');
-module.exports.order = require('./order');
-module.exports.user = require('./user');
+module.exports.Cart = require('./cart');
+module.exports.Electronic = require('./electronics');
+module.exports.Hp = require('./hp');
+module.exports.Laptop = require('./laptop');
+module.exports.Legion = require('./legion');
+module.exports.Order = require('./order');
+module.exports.User = require('./user');

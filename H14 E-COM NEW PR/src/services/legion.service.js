@@ -1,23 +1,23 @@
-const Legino = require("../models/legion")
+const {Legion} = require("../models")
 
 const createLegion = async (reqBody) => {
-    return Legino.create(reqBody)
+    return Legion.create(reqBody)
 };
 
 const listLegion = async () => {
-    return Legino.find({$or : [{is_active : "true"}]}).populate({path : "laptop"})
+    return Legion.find({$or : [{is_active : "true"}]}).populate({path : "laptop"})
 };
 
 const getId = async (id) => {
-    return Legino.findById(id);
+    return Legion.findById(id);
 };
 
 const deleteLegion = async (Id) => {
-    return Legino.findByIdAndDelete(Id)
+    return Legion.findByIdAndDelete(Id)
 };
 
 const updateLegion = async (Id, updatebody) => {
-    return Legino.findByIdAndUpdate(Id, { $set: updatebody })
+    return Legion.findByIdAndUpdate(Id, { $set: updatebody })
 }
 
 module.exports = { createLegion, listLegion, deleteLegion, getId, updateLegion }

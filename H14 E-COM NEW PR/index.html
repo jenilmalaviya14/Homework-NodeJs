@@ -4,31 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>API Data Display</title>
 </head>
 
 <body>
-    <p>Hello</p>
-</body>
+    <table id="data-table" border="1">
+        <thead>
+            <tr>
 
-</html>
-
-<script>
-    const getData = async () => {
-    let options = {
-        method: 'POST',
-        headers: {
-            'Content-Type':
-                'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(user)
-    }
-    // Fake api for making post requests
-    let fetchRes = fetch(
-        "http://192.168.29.201/v1/cart/create-cart",
-        options);
-    fetchRes.then(res =>
-        res.json()).then(d => {
-            console.log(d)
-        })}
-</script>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Processor</th>
+                <th>Memory</th>
+                <th>Colour</th>
+                <th>Gaming</th>
+                <th>Storage</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>

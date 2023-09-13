@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const config = require("../config/config");
 
 const LegionSchema = new mongoose.Schema({
     model: {
@@ -48,7 +49,14 @@ const LegionSchema = new mongoose.Schema({
 },
     {
         timestamps: true,
-        versionKey: false
+        versionKey: false,
+        toJSON: {
+            transform: function (doc, data) {
+              if (data?.image) {
+                data.image = `${config.base_url}images/${data.image}`;
+              }
+            },
+          },
     });
 
 const Legion = mongoose.model("legion_laptop", LegionSchema);
