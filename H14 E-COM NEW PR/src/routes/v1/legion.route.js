@@ -17,7 +17,6 @@ router.post(
 // List legion
 router.get(
     "/list-legion",
-    upload.single("image"),
     validate(legionValidation.listLegion),
     legionController.listLegion
 );

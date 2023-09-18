@@ -26,3 +26,41 @@
         <tbody>
         </tbody>
     </table>
+    <script>
+
+
+        function fetchData() {
+
+            fetch('http://localhost:3000/v1/legion/list-legion')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    const legionData = data.data;
+                    // console.log(legionData);
+                    const row = document.getElementById("data-table")
+                    legionData.map((item, index) => {
+                        row.innerHTML += `
+                <tr key=${index}>
+                    <td>${item.model}</td>
+                    <td>${item.price}</td>
+                    <td>${item.processor}</td>
+                    <td>${item.memory}</td>
+                    <td>${item.colour}</td>
+                    <td>${item.gaming}</td>
+                    <td>${item.storage}</td>
+                    <td>${item.description}</td>
+                     <td><img src="${item.image}"/></td>
+                    <td>${item.price}</td>
+                    <td>${item.laptop.Company}</td>
+                </tr>`;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+        fetchData();
+    </script>
+</body>
+
+</html>

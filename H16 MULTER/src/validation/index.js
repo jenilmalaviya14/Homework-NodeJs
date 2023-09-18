@@ -1,0 +1,1 @@
+module.exports.carValidation = require("./car.validation");

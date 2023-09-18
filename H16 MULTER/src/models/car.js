@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const config = require("../config/config");
 
-const LegionSchema = new mongoose.Schema({
-    model: {
+const CarSchema = new mongoose.Schema({
+    car_model: {
         type: String,
         trim: true
     },
@@ -10,24 +10,11 @@ const LegionSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    processor: {
-        type: String,
-        trim: true
-    },
-    memory: {
+    Year: {
         type: String,
         trim: true
     },
     colour: {
-        type: String,
-        trim: true
-    },
-    gaming: {
-        type: String,
-        trim: true,
-        default: true
-    },
-    storage: {
         type: String,
         trim: true
     },
@@ -41,10 +28,6 @@ const LegionSchema = new mongoose.Schema({
     is_active: {
         type: Boolean,
         default: true
-    },
-    laptop: {
-        type: mongoose.Types.ObjectId,
-        ref: "laptop"
     }
 },
     {
@@ -59,5 +42,5 @@ const LegionSchema = new mongoose.Schema({
         },
     });
 
-const Legion = mongoose.model("legion_laptop", LegionSchema);
-module.exports = Legion;
+const Car = mongoose.model("car", CarSchema);
+module.exports = Car;
