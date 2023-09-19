@@ -6,9 +6,9 @@ const createCar = async (req, res) => {
 
         if (req.file) {
             reqBody.image = req.file.filename;
-          } else {
+        } else {
             throw new Error("Car image is required!");
-          }
+        }
 
         const car = await carService.createCar(reqBody);
         if (!car) {
@@ -74,17 +74,17 @@ const updateCar = async (req, res) => {
         const id = req.params.id;
         const car = await carService.getId(id);
         if (!car) {
-            throw new Error ("Mobile not found!")
+            throw new Error("Mobile not found!")
         }
-        await carService.updateCar(id,req.body)
+        await carService.updateCar(id, req.body)
         res.status(200).json({
-            success : true,
-            message : "car laptop Successfully Updated"
+            success: true,
+            message: "car laptop Successfully Updated"
         });
     } catch (error) {
         res.status(400).json({
-            success : false,
-            message : error.message
+            success: false,
+            message: error.message
         })
     }
 }

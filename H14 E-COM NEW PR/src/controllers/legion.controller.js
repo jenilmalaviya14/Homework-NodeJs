@@ -17,7 +17,7 @@ const createLegion = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "legion laptop create successfully!",
+            message: "legionlaptop  create successfully!",
             data: { legion }
         });
     } catch (error) {

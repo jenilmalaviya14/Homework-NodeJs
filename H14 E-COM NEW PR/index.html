@@ -21,6 +21,7 @@
                 <th>Storage</th>
                 <th>Description</th>
                 <th>Image</th>
+                <th>Company</th>
             </tr>
         </thead>
         <tbody>
@@ -35,8 +36,9 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    const legionData = data.data;
-                    // console.log(legionData);
+                    const legionData = data.data.legion;
+                    console.log(data.data.legion);
+
                     const row = document.getElementById("data-table")
                     legionData.map((item, index) => {
                         row.innerHTML += `
@@ -50,7 +52,6 @@
                     <td>${item.storage}</td>
                     <td>${item.description}</td>
                      <td><img src="${item.image}"/></td>
-                    <td>${item.price}</td>
                     <td>${item.laptop.Company}</td>
                 </tr>`;
                     });
