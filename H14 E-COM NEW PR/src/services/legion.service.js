@@ -5,7 +5,7 @@ const createLegion = async (reqBody) => {
 };
 
 const listLegion = async () => {
-    return Legion.find({$or : [{is_active : "true"}]}).populate({path : "laptop"})
+    return Legion.find({$or : [{is_active : "true"}]}).populate({path : "laptop"});
 };
 
 const getId = async (id) => {

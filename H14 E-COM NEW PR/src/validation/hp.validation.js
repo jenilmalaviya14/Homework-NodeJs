@@ -9,7 +9,8 @@ const createHp = {
         colour: Joi.string().required().trim(),
         gaming: Joi.string().required().trim(),
         storage: Joi.string().required().trim(),
-        description: Joi.string().required().trim()
+        description: Joi.string().required().trim(),
+        image: Joi.string()
     })
 };
 
@@ -22,7 +23,8 @@ const listHp = {
         colour: Joi.string().allow("").trim(),
         gaming: Joi.string().allow("").trim(),
         storage: Joi.string().allow("").trim(),
-        description: Joi.string().allow("").trim()
+        description: Joi.string().allow("").trim(),
+        image: Joi.string().allow(""),
     })
 }
 

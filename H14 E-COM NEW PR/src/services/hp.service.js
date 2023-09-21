@@ -1,4 +1,4 @@
-const Hp = require("../models/hp")
+const {Hp} = require("../models")
 
 const createHp = async (reqBody) => {
     return Hp.create(reqBody)

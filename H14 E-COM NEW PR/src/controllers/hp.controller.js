@@ -3,6 +3,13 @@ const { hpService } = require("../services")
 const createHp = async (req, res) => {
     try {
         const reqBody = req.body
+
+        if (req.file) {
+            reqBody.image = req.file.filename;
+        } else {
+            throw new Error("Product image is required!");
+        }
+
         const hp = await hpService.createHp(reqBody);
         if (!hp) {
             throw new Error("Something went wrong, please try again or later!");
@@ -67,17 +74,17 @@ const updateHp = async (req, res) => {
         const id = req.params.id;
         const hp = await hpService.getId(id);
         if (!hp) {
-            throw new Error ("Mobile not found!")
+            throw new Error("Mobile not found!")
         }
-        await hpService.updateHp(id,req.body)
+        await hpService.updateHp(id, req.body)
         res.status(200).json({
-            success : true,
-            message : "Hp laptop Successfully Updated"
+            success: true,
+            message: "Hp laptop Successfully Updated"
         });
     } catch (error) {
         res.status(400).json({
-            success : false,
-            message : error.message
+            success: false,
+            message: error.message
         })
     }
 }

@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const { hpValidation } = require("../../validation");
 const { hpController } = require("../../controllers");
+const { upload } = require("../../middlewares/upload");
 const validate = require("../../middlewares/validate");
 
 // Create hp
 
 router.post(
     "/create-hp",
+    upload.single("image"),
     validate(hpValidation.createHp),
     hpController.createHp
 );

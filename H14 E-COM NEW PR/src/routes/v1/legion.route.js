@@ -30,6 +30,7 @@ router.delete(
 // Update legion
 router.put(
     "/update-legion/:id",
+    upload.single("image"),
     legionController.updateLegion
 );
 

@@ -1,4 +1,5 @@
 const { legionService } = require("../services")
+const fs = require("fs")
 
 const createLegion = async (req, res) => {
     try {
@@ -6,15 +7,14 @@ const createLegion = async (req, res) => {
 
         if (req.file) {
             reqBody.image = req.file.filename;
-          } else {
+        } else {
             throw new Error("Product image is required!");
-          }
+        }
 
         const legion = await legionService.createLegion(reqBody);
         if (!legion) {
             throw new Error("Something went wrong, please try again or later!");
         }
-
         res.status(200).json({
             success: true,
             message: "legionlaptop  create successfully!",
@@ -73,18 +73,30 @@ const updateLegion = async (req, res) => {
     try {
         const id = req.params.id;
         const legion = await legionService.getId(id);
+
         if (!legion) {
-            throw new Error ("Mobile not found!")
+            throw new Error("Mobile not found!")
         }
-        await legionService.updateLegion(id,req.body)
+
+        const updateLegion = await legionService.updateLegion(id, req.body)
+        if (updateLegion) {
+            if (req.file) {
+                const filePath = `./public/images/${legion.image}`;
+                if (fs.existsSync(filePath)) {
+                    fs.unlinkSync(filePath);
+                }
+            }
+        } else {
+            throw new Error("Something went wrong, please try again or later!");
+        }
         res.status(200).json({
-            success : true,
-            message : "legion laptop Successfully Updated"
+            success: true,
+            message: "legion laptop Successfully Updated"
         });
     } catch (error) {
         res.status(400).json({
-            success : false,
-            message : error.message
+            success: false,
+            message: error.message
         })
     }
 }
