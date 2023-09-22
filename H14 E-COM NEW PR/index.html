@@ -26,10 +26,10 @@
         </thead>
         <tbody>
         </tbody>
+
     </table>
+
     <script>
-
-
         function fetchData() {
 
             fetch('http://localhost:3000/v1/legion/list-legion')
@@ -51,8 +51,8 @@
                     <td>${item.gaming}</td>
                     <td>${item.storage}</td>
                     <td>${item.description}</td>
-                     <td><img src="${item.image}"/></td>
-                     <td>${item.laptop.Company}</td>
+                    <td><img src="${item.image}"/></td>
+                    <td>${item.laptop.Company}</td>
                 </tr>`;
                     });
                 })

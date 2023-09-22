@@ -8,7 +8,6 @@ const createUser = {
         first_name: Joi.string().required().trim(),
         last_name: Joi.string().required().trim(),
         telephone: Joi.string().required().trim(),
-        // otp:Joi.string().allow("")
     })
 };
 

@@ -75,10 +75,10 @@ const updateLegion = async (req, res) => {
         const legion = await legionService.getId(id);
 
         if (!legion) {
-            throw new Error("Mobile not found!")
+            throw new Error("Laptop not found!")
         }
 
-        const updateLegion = await legionService.updateLegion(id, req.body)
+        const updateLegion = await legionService.updateLegion(id, req.body, req.file)
         if (updateLegion) {
             if (req.file) {
                 const filePath = `./public/images/${legion.image}`;
