@@ -5,7 +5,7 @@ const createUser = async (reqBody) => {
 };
 
 const listUser = async () => {
-    return User.find({ $or: [{ is_active: "true" }] })
+    return User.find({ $or: [{ is_active: "true" }] }).populate()
 };
 
 const getId = async (id) => {

@@ -3,6 +3,13 @@ const { playerService } = require("../services")
 const createPlayer = async (req, res) => {
     try {
         const reqBody = req.body
+
+        if (req.file) {
+            reqBody.Player_photo = req.file.filename;
+        } else {
+            throw new Error("Product image is required!");
+        }
+
         const player = await playerService.createPlayer(reqBody);
         if (!player) {
             throw new Error("Something went wrong, please try again or later!");
@@ -67,17 +74,17 @@ const updatePlayer = async (req, res) => {
         const id = req.params.id;
         const player = await playerService.getId(id);
         if (!player) {
-            throw new Error ("Mobile not found!")
+            throw new Error("Mobile not found!")
         }
-        await playerService.updatePlayer(id,req.body)
+        await playerService.updatePlayer(id, req.body)
         res.status(200).json({
-            success : true,
-            message : "player Successfully Updated"
+            success: true,
+            message: "player Successfully Updated"
         });
     } catch (error) {
         res.status(400).json({
-            success : false,
-            message : error.message
+            success: false,
+            message: error.message
         })
     }
 }

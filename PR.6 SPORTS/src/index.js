@@ -5,11 +5,13 @@ const config = require("./config/config");
 const routes = require("./routes/v1");
 const app = express();
 const http = require("http");
-
+const path = require("path")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, `./public`)));
 
 connectDB();
 
@@ -22,5 +24,5 @@ app.use((req, res, next) => {
 const server = http.createServer(app);
 
 server.listen(config.port, () => {
-    console.log("server listning port number "+config.port);
+    console.log("server listning port number " + config.port);
 });
