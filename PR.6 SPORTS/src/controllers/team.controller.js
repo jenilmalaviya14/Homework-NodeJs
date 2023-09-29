@@ -38,7 +38,7 @@ const listTeam = async (req, res) => {
             success: false,
             message: error.message
         })
-    }
+    }``
 };
 
 const deleteTeam = async (req, res) => {

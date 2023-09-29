@@ -91,7 +91,8 @@ const updateLegion = async (req, res) => {
         }
         res.status(200).json({
             success: true,
-            message: "legion laptop Successfully Updated"
+            message: "legion laptop Successfully Updated",
+            data: { updateLegion }
         });
     } catch (error) {
         res.status(400).json({
